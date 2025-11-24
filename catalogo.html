@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASHION - Catálogo de Moda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-gem"></i> FASHION</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar productos..." class="search-input">
+            <button class="close-search" id="closeSearch">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>FASHION</h2>
+                <p class="hero-subtitle">Estilo que Define tu Esencia</p>
+                <p class="hero-description">Descubre nuestra exclusiva colección de moda. Diseños únicos que reflejan tu personalidad y estilo. Calidad premium en cada prenda.</p>
+                <a href="#productos" class="btn-primary">Explorar Colección</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="categoria1">Categoría 1</button>
+                <button class="filter-btn" data-category="categoria2">Categoría 2</button>
+                <button class="filter-btn" data-category="categoria3">Categoría 3</button>
+            </div>
+            <div class="sort-options">
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Ordenar por</option>
+                    <option value="price-low">Precio: Menor a Mayor</option>
+                    <option value="price-high">Precio: Mayor a Menor</option>
+                    <option value="name">Nombre A-Z</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2 class="section-title">COLECCIÓN</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se insertarán aquí dinámicamente -->
+                <!-- Ejemplo de estructura de producto -->
+                <div class="product-card" data-category="categoria1" data-description-full="Esta es una descripción mucho más detallada del Producto 1. Aquí puedes hablar sobre los materiales, el proceso de fabricación, las tallas disponibles y cualquier otra cosa que el cliente deba saber." data-images="imagenes/producto1.jpg,imagenes/producto1-2.jpg,imagenes/producto1-3.jpg">
+                    <div class="product-image">
+                        <img src="imagenes/producto1.jpg" alt="Producto 1">
+                        <div class="product-badge">Nuevo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 1</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$99.99</span>
+                            <button class="btn-add-cart" data-id="1" data-name="Producto 1" data-price="99.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria2">
+                    <div class="product-image">
+                        <img src="imagenes/producto2.jpg" alt="Producto 2">
+                        <div class="product-badge sale">Oferta</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 2</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$149.99</span>
+                            <button class="btn-add-cart" data-id="2" data-name="Producto 2" data-price="149.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria1">
+                    <div class="product-image">
+                        <img src="imagenes/producto3.jpg" alt="Producto 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 3</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$79.99</span>
+                            <button class="btn-add-cart" data-id="3" data-name="Producto 3" data-price="79.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria3">
+                    <div class="product-image">
+                        <img src="imagenes/producto4.jpg" alt="Producto 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 4</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$129.99</span>
+                            <button class="btn-add-cart" data-id="4" data-name="Producto 4" data-price="129.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria2">
+                    <div class="product-image">
+                        <img src="imagenes/producto5.jpg" alt="Producto 5">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 5</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$89.99</span>
+                            <button class="btn-add-cart" data-id="5" data-name="Producto 5" data-price="89.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria1">
+                    <div class="product-image">
+                        <img src="imagenes/producto6.jpg" alt="Producto 6">
+                        <div class="product-badge sale">Oferta</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 6</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$199.99</span>
+                            <button class="btn-add-cart" data-id="6" data-name="Producto 6" data-price="199.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria3">
+                    <div class="product-image">
+                        <img src="imagenes/producto7.jpg" alt="Producto 7">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 7</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$119.99</span>
+                            <button class="btn-add-cart" data-id="7" data-name="Producto 7" data-price="119.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="categoria2">
+                    <div class="product-image">
+                        <img src="imagenes/producto8.jpg" alt="Producto 8">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto 8</h3>
+                        <p class="product-description">Descripción breve del producto</p>
+                        <div class="product-footer">
+                            <span class="product-price">$99.99</span>
+                            <button class="btn-add-cart" data-id="8" data-name="Producto 8" data-price="99.99">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">CONTACTO</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 234 567 890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contacto@micatalogo.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Calle Principal #123, Ciudad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Tu tienda de confianza para productos de calidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mi Catálogo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-modal" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">Tu carrito está vacío</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn-primary btn-checkout" id="btnSolicitarPedido">Solicitar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Datos para el Pedido</h3>
+                <button class="close-modal" id="closeOrderForm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="customerName">Nombre Completo *</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Correo Electrónico *</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerPhone">Teléfono *</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerAddress">Dirección de Entrega *</label>
+                        <textarea id="customerAddress" name="customerAddress" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerCity">Ciudad *</label>
+                        <input type="text" id="customerCity" name="customerCity" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderNotes">Notas Adicionales (Opcional)</label>
+                        <textarea id="orderNotes" name="orderNotes" rows="2" placeholder="Ej: Horario preferido de entrega, instrucciones especiales..."></textarea>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h4>Resumen del Pedido:</h4>
+                        <div id="orderSummary"></div>
+                        <div class="order-total">
+                            <strong>Total:</strong>
+                            <span id="orderTotal">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-submit-order">
+                        <i class="fas fa-paper-plane"></i> Enviar Pedido
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content modal-product-detail">
+            <div class="modal-header">
+                <h3 id="productModalTitle">Nombre del Producto</h3>
+                <button class="close-modal" id="closeProductModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="product-detail-layout">
+                    <div class="product-gallery">
+                        <div class="main-image-container">
+                            <img src="" alt="Vista principal del producto" id="productModalMainImage">
+                        </div>
+                        <div class="thumbnail-container" id="productModalThumbnails">
+                            <!-- Las miniaturas se insertarán aquí -->
+                        </div>
+                    </div>
+                    <div class="product-detail-info">
+                        <p class="product-modal-description" id="productModalDescription"></p>
+                        <div class="product-modal-footer">
+                            <span class="product-modal-price" id="productModalPrice"></span>
+                            <button class="btn-primary btn-add-cart-modal" id="productModalAddToCartBtn">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
